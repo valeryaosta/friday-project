@@ -1,0 +1,20 @@
+@keyframes blink {
+    0% {
+        left: -130%;
+    }
+    100% {
+        left: 130%;
+    }
+}
+
+.default {
+
+}
+
+.red {
+    background: #ffffff;
+}
+
+button:hover::after {
+    animation: blink 0.35s ease;
+}
