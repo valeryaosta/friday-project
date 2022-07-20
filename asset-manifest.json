@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/friday-project/static/css/main.775f8552.chunk.css",
-    "main.js": "/friday-project/static/js/main.bd552ff5.chunk.js",
-    "main.js.map": "/friday-project/static/js/main.bd552ff5.chunk.js.map",
-    "runtime-main.js": "/friday-project/static/js/runtime-main.5b017154.js",
-    "runtime-main.js.map": "/friday-project/static/js/runtime-main.5b017154.js.map",
-    "static/js/2.522c2a03.chunk.js": "/friday-project/static/js/2.522c2a03.chunk.js",
-    "static/js/2.522c2a03.chunk.js.map": "/friday-project/static/js/2.522c2a03.chunk.js.map",
-    "static/js/3.9a9089ea.chunk.js": "/friday-project/static/js/3.9a9089ea.chunk.js",
-    "static/js/3.9a9089ea.chunk.js.map": "/friday-project/static/js/3.9a9089ea.chunk.js.map",
+    "main.css": "/friday-project/static/css/main.29412988.chunk.css",
+    "main.js": "/friday-project/static/js/main.e5053c59.chunk.js",
+    "main.js.map": "/friday-project/static/js/main.e5053c59.chunk.js.map",
+    "runtime-main.js": "/friday-project/static/js/runtime-main.c1e59a23.js",
+    "runtime-main.js.map": "/friday-project/static/js/runtime-main.c1e59a23.js.map",
+    "static/js/2.6818c357.chunk.js": "/friday-project/static/js/2.6818c357.chunk.js",
+    "static/js/2.6818c357.chunk.js.map": "/friday-project/static/js/2.6818c357.chunk.js.map",
+    "static/js/3.d02c646f.chunk.js": "/friday-project/static/js/3.d02c646f.chunk.js",
+    "static/js/3.d02c646f.chunk.js.map": "/friday-project/static/js/3.d02c646f.chunk.js.map",
     "index.html": "/friday-project/index.html",
-    "static/css/main.775f8552.chunk.css.map": "/friday-project/static/css/main.775f8552.chunk.css.map",
-    "static/js/2.522c2a03.chunk.js.LICENSE.txt": "/friday-project/static/js/2.522c2a03.chunk.js.LICENSE.txt"
+    "static/css/main.29412988.chunk.css.map": "/friday-project/static/css/main.29412988.chunk.css.map",
+    "static/js/2.6818c357.chunk.js.LICENSE.txt": "/friday-project/static/js/2.6818c357.chunk.js.LICENSE.txt",
+    "static/media/logout.f0f14280.svg": "/friday-project/static/media/logout.f0f14280.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.5b017154.js",
-    "static/js/2.522c2a03.chunk.js",
-    "static/css/main.775f8552.chunk.css",
-    "static/js/main.bd552ff5.chunk.js"
+    "static/js/runtime-main.c1e59a23.js",
+    "static/js/2.6818c357.chunk.js",
+    "static/css/main.29412988.chunk.css",
+    "static/js/main.e5053c59.chunk.js"
   ]
 }
