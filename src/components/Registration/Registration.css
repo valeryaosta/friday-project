@@ -1,0 +1,120 @@
+.form {
+    box-sizing: border-box;
+    background: #F9F9FE;
+    padding: 25px 33px 20px 33px;
+    width: 413px;
+    margin: 5% auto;
+    border-radius: 8px;
+}
+
+.form h1,
+.form h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+
+    color: #2D2E46;
+}
+
+.form h1 {
+    font-size: 26px;
+    line-height: 39px;
+    text-transform: uppercase;
+}
+
+.form h2 {
+    font-size: 22px;
+    line-height: 33px;
+}
+
+.form > div {
+    margin-top: 24px;
+}
+
+.form div > input {
+    width: 100%;
+
+    border: none;
+    outline: 0 !important;
+    background: inherit;
+    border-bottom: 1px solid rgba(36, 37, 74, 0.2);
+
+    font-family: 'SF UI Display', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #2D2E46;
+}
+
+.form div > label {
+    display: block;
+    font-family: 'SF UI Display', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    color: #24254A;
+    opacity: 0.5;
+}
+
+.btnWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 84px !important;
+}
+
+.btnWrapper > button {
+    font-family: 'SF UI Display', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+.btnWrapper .cancel {
+    cursor: pointer;
+    width: 124px;
+    height: 36px;
+    background: rgba(215, 216, 239, 0.8);
+    border-radius: 30px;
+    border: none;
+
+    color: #21268F;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    font-weight: 500;
+
+}
+
+.btnWrapper .register {
+    cursor: pointer;
+    width: 187px;
+    height: 36px;
+    font-weight: 500;
+    background: #21268F;
+    border-radius: 30px;
+    box-shadow: 0px 4px 18px rgba(33, 38, 143, 0.35), inset 0px 1px 0px rgba(255, 255, 255, 0.3);
+    border: none;
+
+    color: #ECECF9;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.btnWrapper .register:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.auth > p > a {
+    display: inline-block;
+    float: right;
+}

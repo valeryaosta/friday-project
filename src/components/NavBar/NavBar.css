@@ -1,0 +1,19 @@
+.links {
+    width: 800px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    font-size: 17px;
+    font-family: "Gill Sans", sans-serif;
+}
+
+.links a {
+    color: #2D2E46;
+    text-decoration: none;
+}
+
+.links a.activeLink {
+    color: #8e35cb;
+    font-size: 18px;
+    font-weight: 600;
+}

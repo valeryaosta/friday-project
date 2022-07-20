@@ -1,0 +1,25 @@
+.profileWrapper {
+    box-sizing: border-box;
+    display: flex;
+    /*background: black;*/
+    /*padding: 25px 33px 20px 33px;*/
+    width: 1008px;
+    margin: 5% auto;
+    border-radius: 8px;
+    /*border: 2px solid black*/
+}
+
+.profileWrapper .left {
+    width: 25%;
+    margin: 0;
+    padding: 0;
+}
+
+.profileWrapper .right {
+    width: 75%;
+    margin: 0;
+    padding: 0;
+    background: #FEFEFF;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
