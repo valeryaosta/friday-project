@@ -9,7 +9,6 @@ const NavBar = () => {
             <NavLink to={PATH.LOGIN} activeClassName="activeLink">Sign in </NavLink>
             <NavLink to={PATH.REGISTER} activeClassName="activeLink">Sign up </NavLink>
             <NavLink to={PATH.FORGOT_PASSWORD} activeClassName="activeLink">Forgot Password </NavLink>
-            <NavLink to={'/checkEmail'} activeClassName="activeLink">Check Email </NavLink>
             <NavLink to={PATH.NEW_PASSWORD} activeClassName="activeLink">New Password </NavLink>
             <NavLink to={PATH.PROFILE} activeClassName="activeLink">Profile </NavLink>
             <NavLink to={PATH.CARD_PACKS} activeClassName="activeLink">Packs </NavLink>

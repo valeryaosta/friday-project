@@ -1,19 +1,20 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "../Registration/Registration.css"
 import "./Login.css"
 import {useDispatch} from "react-redux";
 import {useFormik} from "formik";
 import {NavLink, Redirect} from "react-router-dom";
-import {getAuthUserDataTC} from "../../redux/loginReducer";
+import {authMe, getAuthUserDataTC} from "../../redux/loginReducer";
 import {useAppSelector} from "../../redux/store";
 import ErrorSnackBar from "../../common/ErrorSnackBar/ErrorSnackBar";
 import {PATH} from "../Routes/Routes";
+import {LinearProgressBar} from "../../common/LinearProgress/LinearProgress";
 
 
 export const Login = () => {
-    const status = useAppSelector(state => state.app.status)
     const error = useAppSelector(state => state.app.error)
     const isAuth = useAppSelector(state => state.login.isAuth)
+    const isInit = useAppSelector(state => state.app.isInit)
 
     const dispatch = useDispatch()
 
@@ -43,6 +44,14 @@ export const Login = () => {
             dispatch(getAuthUserDataTC(values.email, values.password, values.rememberMe))
         },
     });
+
+    useEffect(() => {
+        dispatch(authMe())
+    }, [dispatch])
+
+    if (!isInit) {
+        return <LinearProgressBar/>
+    }
 
     if (isAuth) {
         return <Redirect to={PATH.PROFILE}/>

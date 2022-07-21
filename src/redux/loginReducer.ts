@@ -5,6 +5,7 @@ import {
     setAppErrorActionType,
     setAppStatusAC,
     setAppStatusActionType,
+    setIsInitApp, setIsInitAppActionType,
 } from "./appReducer";
 
 import {setProfileDataActionType} from "./profileReducer";
@@ -39,24 +40,23 @@ export const loginReducer = (state: InitialSignInStateType = initialSignInState,
                 ...state,
                 ...action.payload
             }
+
         default:
             return state
     }
 }
 
 // AC
-export const setAuthUserDataAC = (payload: InitialSignInStateType) => ({
-    type: 'login/SET_USER_DATA', payload
-} as const)
+export const setAuthUserDataAC = (payload: InitialSignInStateType) => ({type: 'login/SET_USER_DATA', payload} as const)
 
 // TC
-
 //auth
-export const authMe = () => (dispatch: ThunkDispatch) => {
+export const authMe = () => (dispatch: any) => {
     dispatch(setAppStatusAC('loading'))
+    dispatch(setIsInitApp(true))
     authAPI.me()
         .then(res => {
-            console.log(res)
+            // console.log(res)
             dispatch(setAppStatusAC('succeeded'))
             dispatch(setAuthUserDataAC({user: res.data, isAuth: true}))
         }).catch((e) => {
@@ -64,9 +64,6 @@ export const authMe = () => (dispatch: ThunkDispatch) => {
         dispatch(setAppStatusAC('failed'))
         dispatch(setAppErrorAC(error))
     })
-        .finally(() => {
-            dispatch(setAppStatusAC('idle'))
-        })
 }
 
 // login
@@ -74,7 +71,7 @@ export const getAuthUserDataTC = (email: string, password: string, rememberMe: b
     dispatch(setAppStatusAC('loading'))
     authAPI.login(email, password, rememberMe)
         .then(res => {
-            console.log(res)
+            // console.log(res)
             dispatch(setAppStatusAC('succeeded'))
             dispatch(setAuthUserDataAC({user: res.data, isAuth: true}))
         })
@@ -82,9 +79,6 @@ export const getAuthUserDataTC = (email: string, password: string, rememberMe: b
             const error = e.response ? e.response.data.error : (e.message + ', more details in the console')
             dispatch(setAppStatusAC('failed'))
             dispatch(setAppErrorAC(error))
-        })
-        .finally(() => {
-            dispatch(setAppStatusAC('idle'))
         })
 }
 
@@ -102,9 +96,6 @@ export const deleteAuthUserDataTC = () => (dispatch: ThunkDispatch) => {
             dispatch(setAppStatusAC('failed'))
             dispatch(setAppErrorAC(error))
         })
-        .finally(() => {
-            dispatch(setAppStatusAC('idle'))
-        })
 }
 
 
@@ -115,6 +106,7 @@ export type LoginActionsType =
     | setAppStatusActionType
     | setAppErrorActionType
     | setProfileDataActionType
+    | setIsInitAppActionType
 
 type ThunkDispatch = Dispatch<LoginActionsType>
 
