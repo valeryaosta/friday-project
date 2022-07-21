@@ -17,7 +17,7 @@ const Routes = () => {
             <Route exact path={PATH.LOGIN} render={() => <Login/>}/>
             <Route exact path={PATH.REGISTER} render={() => <Registration/>}/>
             <Route exact path={PATH.FORGOT_PASSWORD} render={() => <ForgotPassword/>}/>
-            <Route exact path={'/checkEmail'} render={() => <CheckEmail/>}/>
+            <Route exact path={PATH.CHECK_EMAIL} render={() => <CheckEmail/>}/>
             <Route exact path={PATH.NEW_PASSWORD} render={() => <NewPassword/>}/>
             <Route exact path={PATH.PROFILE} render={() => <Profile/>}/>
             <Route exact path={PATH.CARD_PACKS} render={() => <CardPacks/>}/>
@@ -33,7 +33,8 @@ export const PATH = {
     LOGIN: '/login',
     REGISTER: '/registration',
     FORGOT_PASSWORD: '/forgot-password',
-    NEW_PASSWORD: '/set-new-password/:token?',
+    CHECK_EMAIL: '/check-email',
+    NEW_PASSWORD: '/set-new-password/:token',
     PROFILE: '/profile',
     CARD_PACKS: '/card_packs',
     CARDS: '/cards',

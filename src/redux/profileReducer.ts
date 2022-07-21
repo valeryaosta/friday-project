@@ -6,7 +6,6 @@ type ProfileDataType = {
     id: string
 }
 
-
 const initialProfileState = {}
 
 type InitialProfileStateType = typeof initialProfileState

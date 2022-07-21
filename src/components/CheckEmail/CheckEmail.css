@@ -1,0 +1,19 @@
+.checkEmail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emailInstr {
+    margin-bottom: 100px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.emailInstr span {
+    display: inline-block;
+}
+
+.left {
+    text-align: left;
+}
