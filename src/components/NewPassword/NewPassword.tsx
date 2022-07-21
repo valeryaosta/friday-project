@@ -10,6 +10,7 @@ import {useDispatch} from "react-redux";
 import {PATH} from "../Routes/Routes";
 
 export const NewPassword = () => {
+
     const email = useAppSelector(state => state.password.email)
     const error = useAppSelector(state => state.app.error)
     const success = useAppSelector(state => state.password.success)
