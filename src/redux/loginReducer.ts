@@ -56,14 +56,15 @@ export const authMe = () => (dispatch: any) => {
     dispatch(setIsInitApp(true))
     authAPI.me()
         .then(res => {
-            // console.log(res)
             dispatch(setAppStatusAC('succeeded'))
             dispatch(setAuthUserDataAC({user: res.data, isAuth: true}))
-        }).catch((e) => {
-        const error = e.response ? e.response.data.error : (e.message + ', more details in the console')
-        dispatch(setAppStatusAC('failed'))
-        dispatch(setAppErrorAC(error))
-    })
+        })
+    // в me запросе лучше ошибку эту не обрабатывать
+    // .catch((e) => {
+    // const error = e.response ? e.response.data.error : (e.message + ', more details in the console')
+    // dispatch(setAppStatusAC('failed'))
+    // dispatch(setAppErrorAC(error))
+    // })
 }
 
 // login
@@ -71,7 +72,6 @@ export const getAuthUserDataTC = (email: string, password: string, rememberMe: b
     dispatch(setAppStatusAC('loading'))
     authAPI.login(email, password, rememberMe)
         .then(res => {
-            // console.log(res)
             dispatch(setAppStatusAC('succeeded'))
             dispatch(setAuthUserDataAC({user: res.data, isAuth: true}))
         })
@@ -89,7 +89,7 @@ export const deleteAuthUserDataTC = () => (dispatch: ThunkDispatch) => {
         .then(res => {
             dispatch(setAppStatusAC('succeeded'))
             dispatch(setAuthUserDataAC({user: {}, isAuth: false}))
-            alert(res.data.info)
+            dispatch(setAppErrorAC(res.data.info))
         })
         .catch((e) => {
             const error = e.response ? e.response.data.error : (e.message + ', more details in the console')

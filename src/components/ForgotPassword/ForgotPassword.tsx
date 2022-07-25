@@ -11,6 +11,7 @@ import "./ForgotPassword.css";
 import {forgotPasswordTC} from "../../redux/passwordReducer";
 
 export const ForgotPassword = () => {
+    const isAuth = useAppSelector(state => state.login.isAuth)
     const error = useAppSelector(state => state.app.error)
     const emailEntered = useAppSelector((state) => state.password.email)
 
@@ -34,6 +35,10 @@ export const ForgotPassword = () => {
             dispatch(forgotPasswordTC(values.email))
         },
     });
+
+    if(isAuth) {
+        return <Redirect to={PATH.PROFILE}/>
+    }
 
     if (emailEntered) {
         return <Redirect to={PATH.CHECK_EMAIL}/>

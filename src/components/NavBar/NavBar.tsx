@@ -2,8 +2,15 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 import {PATH} from '../Routes/Routes';
 import "./NavBar.css";
+// import {deleteAuthUserDataTC} from "../../redux/loginReducer";
+// import {useDispatch} from 'react-redux';
 
 const NavBar = () => {
+    // const dispatch = useDispatch()
+    // const onLogout = () => {
+    //     dispatch(deleteAuthUserDataTC())
+    // }
+
     return (
         <div className="links">
             <NavLink to={PATH.LOGIN} activeClassName="activeLink">Sign in </NavLink>

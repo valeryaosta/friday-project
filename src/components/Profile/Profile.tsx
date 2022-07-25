@@ -15,6 +15,8 @@ export const Profile = () => {
             // dispatch(getAuthUserDataTC())
         }
     }, [dispatch])
+
+
     if (!isAuth) {
         return <Redirect to={PATH.LOGIN}/>
     }

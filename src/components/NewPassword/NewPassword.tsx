@@ -10,10 +10,10 @@ import {useDispatch} from "react-redux";
 import {PATH} from "../Routes/Routes";
 
 export const NewPassword = () => {
-
     const email = useAppSelector(state => state.password.email)
     const error = useAppSelector(state => state.app.error)
     const success = useAppSelector(state => state.password.success)
+    const isAuth = useAppSelector(state => state.login.isAuth)
 
     const {token} = useParams<Record<string, string>>()
     const tokenName = token ? token : ''
@@ -39,6 +39,10 @@ export const NewPassword = () => {
             dispatch(setNewPasswordTC(values.password, tokenName))
         },
     });
+
+    if(isAuth) {
+        return <Redirect to={PATH.PROFILE}/>
+    }
 
     if (success) {
         return <Redirect to={PATH.LOGIN}/>

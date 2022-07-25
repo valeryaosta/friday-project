@@ -51,30 +51,30 @@ export const Registration = () => {
     }
 
     return (
+        <div>
+            <form className='form' onSubmit={formik.handleSubmit}>
+                <h1>Learning Cards</h1>
+                <h2>Sign Up</h2>
+                <div>
+                    <label htmlFor="email">Email </label>
+                    <input type="text"
+                           id="email"
+                           {...formik.getFieldProps("email")}
+                    />
+                </div>
+                {formik.errors.email && formik.touched.email &&
+                    <span className="error">{formik.errors.email}</span>}
+                <div>
+                    <label htmlFor="password">Password </label>
+                    <input type="password"
+                           id="password"
+                           {...formik.getFieldProps("password")}
+                    />
+                </div>
+                {formik.errors.password && formik.touched.password &&
+                    <span className="error">{formik.errors.password}</span>}
 
-        <form className='form' onSubmit={formik.handleSubmit}>
-            <h1>Learning Cards</h1>
-            <h2>Sign Up</h2>
-            <div>
-                <label htmlFor="email">Email </label>
-                <input type="text"
-                       id="email"
-                       {...formik.getFieldProps("email")}
-                />
-            </div>
-            {formik.errors.email && formik.touched.email &&
-                <span className="error">{formik.errors.email}</span>}
-            <div>
-                <label htmlFor="password">Password </label>
-                <input type="password"
-                       id="password"
-                       {...formik.getFieldProps("password")}
-                />
-            </div>
-            {formik.errors.password && formik.touched.password &&
-                <span className="error">{formik.errors.password}</span>}
-
-            {/*            <div>
+                {/*            <div>
                 <label htmlFor="password">Confirm password </label>
                 <input type="password"
                        id="password"
@@ -84,17 +84,18 @@ export const Registration = () => {
                 />
             </div>*/}
 
-            <div className="btnWrapper">
-                <button className="cancel">Cancel</button>
-                <button type="submit" className="register"
-                        disabled={!!(formik.errors.email || formik.errors.password)}
-                >
-                    Register
-                </button>
-            </div>
+                <div className="btnWrapper">
+                    <button className="cancel">Cancel</button>
+                    <button type="submit" className="register"
+                            disabled={!!(formik.errors.email || formik.errors.password)}
+                    >
+                        Register
+                    </button>
+                </div>
 
-            {error && <ErrorSnackBar errorMessage={error}/>}
-        </form>
+                {error && <ErrorSnackBar errorMessage={error}/>}
+            </form>
+        </div>
     )
 }
 

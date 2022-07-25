@@ -33,6 +33,12 @@ export const passwordAPI = {
     }
 }
 
+export const profileAPI = {
+    changeProfile(payload: { name: string, avatar?: string }) {
+        return instance.put<ResponseUpdateUserType>(`auth/me`, payload)
+    }
+}
+
 
 export type ForgotDataType = {
     email: string
@@ -45,4 +51,21 @@ export type RecoverResponseType = {
     html: boolean,
     info: string,
     success: boolean
+}
+
+export type ResponseUpdateUserType = {
+    updatedUser: {
+        _id: string;
+        email: string;
+        name: string;
+        avatar?: string;
+        publicCardPacksCount: number;
+        created: Date;
+        updated: Date;
+        isAdmin: boolean;
+        verified: boolean; // подтвердил ли почту
+        rememberMe: boolean;
+        error?: string;
+    },
+    error?: string
 }

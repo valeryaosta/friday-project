@@ -73,9 +73,10 @@ export const Login = () => {
                     <span className="error">{formik.errors.email}</span>}
                 <div>
                     <label htmlFor="password">Password </label>
-                    <input type="password"
-                           id="password"
-                           {...formik.getFieldProps("password")}
+                    <input
+                        type="password"
+                        id="password"
+                        {...formik.getFieldProps("password")}
                     />
                 </div>
                 {formik.errors.password && formik.touched.password &&

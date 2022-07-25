@@ -60,7 +60,7 @@ export const setNewPasswordTC = (password: string, resetPasswordToken: string) =
         .then(res => {
             dispatch(setAppStatusAC('succeeded'))
             dispatch(setNewPasswordSuccessAC(true))
-            alert(res.data.info + ' you will be redirected to login page')
+            dispatch(setAppErrorAC(res.data.info + ' you will be redirected to login page'))
         })
         .catch((e) => {
             const error = e.response ? e.response.data.error : (e.message + ', more details in the console')
