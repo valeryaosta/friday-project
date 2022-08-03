@@ -13,7 +13,7 @@ import {ErrorNotFound} from "../ErrorNotFound/ErrorNotFound";
 const Routes = () => {
     return (
         <Switch>
-            <Route exact path={'/'} render={() => <Login/>}/>
+            <Route exact path={'/'} render={() => <Profile/>}/>
             <Route exact path={PATH.LOGIN} render={() => <Login/>}/>
             <Route exact path={PATH.REGISTER} render={() => <Registration/>}/>
             <Route exact path={PATH.FORGOT_PASSWORD} render={() => <ForgotPassword/>}/>

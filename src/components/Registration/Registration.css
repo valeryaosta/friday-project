@@ -1,3 +1,9 @@
+.centerForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .form {
     box-sizing: border-box;
     background: #F9F9FE;
